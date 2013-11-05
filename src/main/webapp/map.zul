@@ -1,0 +1,25 @@
+<window title="Toyota maps" border="normal">
+   <include src="template.zul"/>
+
+
+<zk>
+    <!-- Create a map -->
+    <gmaps id="mymap" width="500px" height="400px" lat="59.916198" lng="10.636944" zoom="15" language="no">
+        <!-- add a marker, with content, open content-->
+        <gmarker id="mymark" lat="59.916198" lng="10.636944" open="true">
+            <attribute name="content"><![CDATA[
+                <a href="http://www.webstep.no">Webstep AS</a> - din løsning.
+                ]]>
+            </attribute>
+        </gmarker>
+    </gmaps>
+    <grid>
+        <rows>
+    		<row>Latitude: <doublebox id="mylat" value="&#36;{mymap.lat}" onChange="mymap.panTo(self.doubleValue(), mymap.getLng())"/></row>
+    		<row>Longitude: <doublebox id="mylng" value="&#36;{mymap.lng}" onChange="mymap.panTo(mymap.getLat(), self.doubleValue())"/></row>
+    		<row>Zoom Level: <intbox id="myzoom" value="&#36;{mymap.zoom}" onChange="mymap.setZoom(self.getValue())"/></row>
+    	</rows>
+    </grid>
+</zk>
+
+</window>
