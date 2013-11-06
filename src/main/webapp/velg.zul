@@ -1,0 +1,39 @@
+<window title="Velg" border="normal">
+   <include src="menu.zul"/>
+
+<zk xmlns:w="client">
+<style dynamic="true">
+	.ctl { border: 1px outset #777; background:#cfeaf1; margin: 2px;
+	margin-right: 10px; padding-left: 2px; padding-right: 2px;
+	display: block; width:80px; height:32px; text-align:center; cursor:pointer;}
+</style>
+
+	<hbox>
+		<groupbox mold="3d" width="150px">
+			<caption label="Appear" />
+			<label sclass="ctl" value="SlideDown"
+			 w:onClick="jq(this.$f('t')).hide().slideDown()"/>
+			<label sclass="ctl" value="Appear"
+			 w:onClick="jq(this.$f('t')).hide().fadeIn()"/>
+			<label sclass="ctl"	value="Slowly"
+			 w:onClick="jq(this.$f('t')).hide().fadeIn(2500)"/>
+		</groupbox>
+		<groupbox mold="3d" width="150px">
+			<caption label="Disappear" />
+			<label sclass="ctl" value="SlideUp"
+			 w:onClick="jq(this.$f('t')).show().slideUp()"/>
+			<label sclass="ctl" value="Fade"
+			 w:onClick="jq(this.$f('t')).show().fadeOut()"/>
+		</groupbox>
+	</hbox>
+	<div id="t" style="position:relative;zoom:1">
+	<groupbox>
+		<caption label="Dynamic Content" />
+		Content to show and hide dynamically.
+		<datebox />
+	</groupbox>
+	Description
+	<textbox />
+	</div>
+</zk>
+</window>

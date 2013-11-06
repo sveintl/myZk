@@ -1,3 +1,5 @@
 <window title="Toyota dashboard" border="normal">
-   <include src="template.zul"/>
+   <include src="menu.zul"/>
+
+
 </window>

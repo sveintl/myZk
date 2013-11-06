@@ -1,5 +1,5 @@
 <window title="Toyota maps" border="normal">
-   <include src="template.zul"/>
+   <include src="menu.zul"/>
 
 
 <zk>

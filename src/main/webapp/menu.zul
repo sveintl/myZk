@@ -1,0 +1,29 @@
+<zk xmlns:n="native">
+    <?variable-resolver class="no.toyota.domain.DealerResolver"?>
+       <!-- Begin Menu -->
+       <menubar id="menubar" autodrop="true">
+           <menu label="Salg">
+               <menupopup>
+                    <menuitem label="Stasjonsvogn" onClick="alert(self.label)" />
+                    <menuitem label="Personbil" onClick="alert(self.label)" />
+                    <menuitem label="SUV" onClick="alert(self.label)" />
+                    <menuitem label="Sportsbil" onClick="alert(self.label)" />
+                    <menuitem label="Elbil" onClick="alert(self.label)" />
+                    <menuitem label="Statistikk" onClick='Executions.sendRedirect("statistikk.zul")' />
+               </menupopup>
+           </menu>
+           <menu label="Din forhandler">
+               <menupopup>
+                    <menuitem label="Søk" onClick="alert(self.label)" />
+                    <menuitem label="Velg" onClick='Executions.sendRedirect("velg.zul")' />
+                    <menuitem label="Kontakt" onClick="alert(self.label)" />
+                     <menu label="Din forhandler">
+                           <menupopup>
+                                <menuitem forEach="${dealers}" label="${each.name}" onClick="alert(self.label)"/>
+                           </menupopup>
+                     </menu>
+               </menupopup>
+           </menu>
+
+       </menubar>
+</zk>
