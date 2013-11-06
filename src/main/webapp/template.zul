@@ -17,8 +17,8 @@
                     <menuitem label="Velg" onClick="alert(self.label)" />
                     <menuitem label="Kontakt" onClick="alert(self.label)" />
                      <menu label="Din forhandler">
-                           <menupopup forEach="${dealers}">
-                                <menuitem label="${each.name}" onClick="alert(self.label)"/>
+                           <menupopup>
+                                <menuitem forEach="${dealers}" label="${each.name}" onClick="alert(self.label)"/>
                            </menupopup>
                      </menu>
                </menupopup>
