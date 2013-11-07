@@ -1,7 +1,7 @@
 <zk xmlns:n="native">
     <?variable-resolver class="no.toyota.domain.DealerResolver"?>
        <!-- Begin Menu -->
-       <menubar id="menubar" autodrop="true">
+       <menubar id="menubar" autodrop="true" apply="no.toyota.composer.DealerComposer">
            <menu label="Salg">
                <menupopup>
                     <menuitem label="Stasjonsvogn" onClick="alert(self.label)" />
@@ -18,8 +18,10 @@
                     <menuitem label="Velg" onClick='Executions.sendRedirect("velg.zul")' />
                     <menuitem label="Kontakt" onClick="alert(self.label)" />
                      <menu label="Din forhandler">
-                           <menupopup>
-                                <menuitem forEach="${dealers}" label="${each.name}" onClick="alert(self.label)"/>
+                           <menupopup id="forhandler">
+                                <menuitem forEach="${dealers}" label="${each.name}">
+                                    <custom-attributes dealer="${each}"/>
+                                </menuitem>
                            </menupopup>
                      </menu>
                </menupopup>
