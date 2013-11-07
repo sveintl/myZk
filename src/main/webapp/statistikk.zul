@@ -1,6 +1,7 @@
+   <?import no.toyota.domain.CarType?>
 <window title="Statistikk" border="normal">
    <include src="menu.zul"/>
-
+   <?variable-resolver class="no.toyota.domain.StatisticsResolver"?>
     <zk>
         <vbox>
         	<grid width="400px">
@@ -9,25 +10,9 @@
         			<column label="value" />
         		</columns>
         		<rows>
-        			<row>
-        				<label id="c0" value="C/C++" />
-        				<doublebox id="v0" value="21.2" constraint="no empty"
-        					onChange="update(0)" />
-        			</row>
-        			<row>
-        				<label id="c1" value="VB" />
-        				<doublebox id="v1" value="10.2" constraint="no empty"
-        					onChange="update(1)" />
-        			</row>
-        			<row>
-        				<label id="c2" value="Java" />
-        				<doublebox id="v2" value="40.4" constraint="no empty"
-        					onChange="update(2)" />
-        			</row>
-        			<row>
-        				<label id="c3" value="PHP" />
-        				<doublebox id="v3" value="28.2" constraint="no empty"
-        					onChange="update(3)" />
+        			<row forEach="${statistics}">
+        				<label id="c${forEachStatus.index}" value="${each.carType}" />
+        				<label id="v${forEachStatus.index}" value="${each.numSold}" />
         			</row>
         		</rows>
         	</grid>
@@ -35,18 +20,18 @@
         		type="pie">
         		<zscript>
         			void update(int rowIndex) {
-        				Label lb = (Label) self.getFellow("c"+rowIndex);
-        				Doublebox db = (Doublebox) self.getFellow("v"+rowIndex);
-        				model.setValue(lb.value, new Double(db.getValue().doubleValue()));
+        				Label lb = (Label) self.getFellow("c" + rowIndex);
+        				Label tb = (Label) self.getFellow("v"+ rowIndex);
+        				model.setValue(lb.value, Double.valueOf(tb.value));
         		  	}
         		  	PieModel model = new SimplePieModel();
-        			for(int j=0; j &lt; 4; ++j) {
-        				update(j);
+
+        		  	for (int j=0; j &lt; CarType.values().length; j++) {
+        		  	    update(j);
         		  	}
         		  	mychart.setModel(model);
         		</zscript>
         	</flashchart>
-        	<toolbarbutton label="See More chart..." href="/data/moreflashchart.zul" target="zksandbox"/>
         </vbox>
     </zk>
 </window>
