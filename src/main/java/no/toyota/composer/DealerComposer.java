@@ -1,7 +1,8 @@
 package no.toyota.composer;
 
 import no.toyota.domain.Dealer;
-import org.zkoss.zhtml.Messagebox;
+import org.zkoss.zk.ui.Executions;
+import org.zkoss.zk.ui.Sessions;
 import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
@@ -21,7 +22,8 @@ public class DealerComposer extends SelectorComposer<Menupopup>{
     public void submit(Event event) {
         Menuitem clicked = (Menuitem)event.getTarget();
         Dealer dealer = (Dealer)clicked.getAttribute("dealer");
-        Messagebox.show("Clicked " + dealer.getName());
+        Sessions.getCurrent().setAttribute("selectedDealer", dealer);
+        Executions.sendRedirect("map.zul");
     }
 
 

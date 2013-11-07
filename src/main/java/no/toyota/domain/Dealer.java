@@ -11,7 +11,7 @@ public class Dealer {
 
     private String name;
     private String address;
-    private String epost;
+    private String email;
     private double longitude;
     private double latitude;
 
@@ -35,12 +35,12 @@ public class Dealer {
         this.address = address;
     }
 
-    public String getEpost() {
-        return epost;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEpost(String epost) {
-        this.epost = epost;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public double getLongitude() {
