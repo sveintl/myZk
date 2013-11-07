@@ -1,0 +1,64 @@
+<window title="Toyota maps" border="normal" apply="no.toyota.composer.RegisterRetriever">
+    <include src="menu.zul"/>
+
+    <grid vflex="1">
+        <columns>
+            <column label="Type" width="150px"/>
+            <column label="Content"/>
+        </columns>
+        <rows>
+            <row>
+                <label value="Brukernavn" width="150px"/>
+                <textbox value="Ola" width="150px" id="username"/>
+            </row>
+            <row>
+                Passord
+                <textbox type="password" value="123456789" width="150px" id="password"/>
+            </row>
+            <row>
+                Alder:
+                <intbox value="19" constraint="no negative,no zero"
+                        width="150px" id="age"/>
+            </row>
+            <row>
+                Telefon:
+                <intbox constraint="no negative,no zero" width="150px"
+                        value="12345678" id="phoneNo"/>
+            </row>
+            <row>
+                Fødselsdag:
+                <hlayout>
+                    <datebox width="150px" id="birthday"/>
+                    <listbox
+                            onSelect="birthday.setFormat(self.selectedItem.value)" mold="select"
+                            rows="1">
+                        <listitem label="Default" value=""/>
+                        <listitem label="yyyy/MM/dd hh:mm a" value="yyyy/MM/dd hh:mm a"/>
+                        <listitem label="yyyy/MM/dd" value="yyyy/MM/dd"/>
+                        <listitem label="MM-dd-yy" value="MM-dd-yy"/>
+                    </listbox>
+                </hlayout>
+            </row>
+            <row>
+                Adresse:
+                <vlayout>
+                    <textbox width="250px"
+                             value="Langveien 1, Rjukan" id="address"/>
+                    <hlayout>
+                        <label value="Postnummer:"/>
+                        <intbox constraint="no negative,no zero"
+                                width="150px" id="postalCode"/>
+                    </hlayout>
+                </vlayout>
+            </row>
+            <row>
+                Epost:
+                <textbox width="150px" value="din@mailadresse.her"
+                         constraint="/.+@.+\.[a-z]+/: Vennligst skriv inn en epostadresse" id="email"/>
+            </row>
+            <row>
+                <button label="Send inn" id="submitButton"/>
+            </row>
+        </rows>
+    </grid>
+</window>

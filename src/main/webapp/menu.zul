@@ -14,7 +14,7 @@
            </menu>
            <menu label="Din forhandler">
                <menupopup>
-                    <menuitem label="Søk" onClick="alert(self.label)" />
+                    <menuitem label="Registrer deg" onClick='Executions.sendRedirect("register.zul")' />
                     <menuitem label="Velg" onClick='Executions.sendRedirect("velg.zul")' />
                     <menuitem label="Kontakt" onClick="alert(self.label)" />
                      <menu label="Din forhandler">

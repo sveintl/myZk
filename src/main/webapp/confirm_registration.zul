@@ -1,0 +1,51 @@
+<window title="Confirm registration" border="normal">
+    <include src="menu.zul"/>
+
+    <grid vflex="1">
+        <rows>
+            <row>
+                <label value="Brukernavn" width="150px"/>
+                <label value="${sessionScope.registeredUser.username}" width="150px" id="username"/>
+            </row>
+            <row>
+                Passord
+                <label value="${sessionScope.registeredUser.password}" width="150px" id="password"/>
+            </row>
+            <row>
+                Alder:
+                <label value="${sessionScope.registeredUser.age}"
+                        width="150px" id="age"/>
+            </row>
+            <row>
+                Telefon:
+                <label width="150px"
+                        value="${sessionScope.registeredUser.phoneNo}" id="phoneNo"/>
+            </row>
+            <row>
+                Fødselsdag:
+                <hlayout>
+                    <label width="150px" id="birthday" value="${sessionScope.registeredUser.birthday}"/>
+                </hlayout>
+            </row>
+            <row>
+                Adresse:
+                <vlayout>
+                    <label width="250px"
+                             value="${sessionScope.registeredUser.address}" id="address"/>
+                    <hlayout>
+                        <label value="Postnummer:"/>
+                        <label width="150px" id="postalCode" value="${sessionScope.registeredUser.postalCode}"/>
+                    </hlayout>
+                </vlayout>
+            </row>
+            <row>
+                Epost:
+                <label width="150px" value="${sessionScope.registeredUser.email}"
+                        id="email"/>
+            </row>
+            <row>
+                <button label="Bekreft" id="submitButton"/>
+            </row>
+        </rows>
+    </grid>
+</window>
