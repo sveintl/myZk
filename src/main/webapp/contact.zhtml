@@ -1,0 +1,31 @@
+<zk xmlns:h="native">
+    <h:html>
+
+        <h:head>
+            <h:title>Contact</h:title>
+            <h:link href="styles/main.css" type="text/css" rel="stylesheet"/>
+        </h:head>
+        <h:body>
+            <h:div id="bannerContainer" class="mainBox">
+                <h:p>&#32;</h:p>
+            </h:div>
+            <h:div id="mainContainer">
+                <h:div id="leftmenuContainer" class="mainBox">
+                    <h:ul>
+                        <h:li><h:a href="index.zul">Forsiden</h:a></h:li>
+                        <h:li><h:a href="statistikk.zul">Statistikk</h:a></h:li>
+                    </h:ul>
+                </h:div>
+                <h:div id="contentContainer" class="mainBox">
+                    <h:h1>Kontaktinformasjon</h:h1>
+                </h:div>
+
+            </h:div>
+            <h:div id="footerContainer" class="mainBox">
+                <h:span>&#169; 2013 Toyota</h:span>
+            </h:div>
+
+        </h:body>
+    </h:html>
+
+</zk>

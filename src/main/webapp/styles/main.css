@@ -1,0 +1,37 @@
+
+#bannerContainer, #mainContainer, #footerContainer {
+    width: 95%;
+}
+div.mainBox {
+    border: 1px solid;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    margin: 10px;
+}
+#bannerContainer {
+    background: url("../images/toyota.jpg") no-repeat scroll 0 0 / 80px 60px rgba(0, 0, 0, 0);
+    height: 15%;
+}
+#mainContainer {
+    display: inline-block;
+}
+#leftmenuContainer {
+    float: left;
+    width: 14%;
+}
+#leftmenuContainer ul {
+    list-style: none outside none;
+}
+#contentContainer {
+    float: right;
+    width: 83%;
+    height: 65%;
+    margin-right: 0;
+}
+#footerContainer {
+    text-align: center;
+    height: 15%;
+}
+#footerContainer span {
+    margin: 10px;
+}

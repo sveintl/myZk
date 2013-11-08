@@ -16,7 +16,7 @@
                <menupopup>
                     <menuitem label="Registrer deg" onClick='Executions.sendRedirect("register.zul")' />
                     <menuitem label="Velg" onClick='Executions.sendRedirect("velg.zul")' />
-                    <menuitem label="Kontakt" onClick="alert(self.label)" />
+                    <menuitem label="Kontakt" onClick='Executions.sendRedirect("contact.zhtml")' />
                      <menu label="Din forhandler">
                            <menupopup id="forhandler">
                                 <menuitem forEach="${dealers}" label="${each.name}">

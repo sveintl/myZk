@@ -1,5 +1,61 @@
 <window title="Toyota dashboard" border="normal">
    <include src="menu.zul"/>
 
+    <zk xmlns:h="native">
+        <style>
+            .main {
+                margin: 0;
+                padding: 5px;
+                width: 100%;
+            }
+            .main .tag {
+                list-style: none outside none;
+                position: relative;
+                float: left;
+                padding-right: 10px;
+                line-height: 25px;
+            }
+            .tagLevel-1, .tagLevel-1 .z-radio-cnt { font-size: 20px; font-weight: bold; color: #008BB6; }
+            .tagLevel-2, .tagLevel-2 .z-radio-cnt { font-size: 18px; color: green; }
+            .tagLevel-3, .tagLevel-3 .z-radio-cnt { font-size: 16px; color: darkorange; }
+            .tagLevel-4, .tagLevel-4 .z-radio-cnt { font-size: 14px; }
+            .tagLevel-5, .tagLevel-5 .z-radio-cnt { font-size: 12px; }
+            .tagLevel-6, .tagLevel-6 .z-radio-cnt { font-size: 10px; color: gray;}
+        </style>
+        <div>
+            <!-- Data From Server -->
+            <zscript><![CDATA[
+            import org.zkoss.zk.ui.metainfo.*;
 
+            //A simple Random method
+            int getRandom() {
+                return (int) (Math.random() * 6 + 1);
+            }
+
+            //Get All the components this ZK version Support
+            ComponentDefinitionMap allCompMap = this.page.getLanguageDefinition().getComponentDefinitionMap();
+
+            Map tagMap = new HashMap();
+            for (Iterator it = allCompMap.getNames().iterator();it.hasNext();) {
+                tagMap.put(it.next(), getRandom());
+            }
+
+            Set tagSet = tagMap.entrySet();
+        ]]></zscript>
+
+            <!-- Page Dom Structure -->
+            <h:ul class="main">
+                <h:li forEach="${tagSet}" class="tag" val="${each.value}">${each.key}</h:li>
+            </h:ul>
+
+            <!-- Client Handling -->
+            <script type="text/javascript">
+                zk.afterMount(function() {
+                    jq(".main > li").addClass(function() {
+                        return 'tagLevel-' + jq(this).attr('val');
+                    });
+                });
+            </script>
+        </div>
+    </zk>
 </window>
