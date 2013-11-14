@@ -1,5 +1,5 @@
 
-#bannerContainer, #mainContainer, #footerContainer {
+.bannerContainer, #mainContainer, #footerContainer {
     width: 95%;
 }
 div.mainBox {
@@ -8,7 +8,7 @@ div.mainBox {
     box-shadow: 10px 10px 5px #888888;
     margin: 10px;
 }
-#bannerContainer {
+.bannerContainer {
     background: url("../images/toyota.jpg") no-repeat scroll 0 0 / 80px 60px rgba(0, 0, 0, 0);
     height: 15%;
 }
