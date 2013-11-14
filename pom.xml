@@ -7,7 +7,10 @@
     <groupId>myZk</groupId>
     <artifactId>myZk</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <modules>
+        <module>persistence</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <properties>
         <zkversion>6.5.4</zkversion>
