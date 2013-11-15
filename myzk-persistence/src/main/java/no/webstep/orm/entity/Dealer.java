@@ -74,13 +74,13 @@ public class Dealer implements Serializable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append(this.getClass().getName()).append("-");
-        builder.append("   id=").append(id);
-        builder.append("   name=").append(name);
-        builder.append("   email=").append(email);
-        builder.append("   address=").append(address);
-        builder.append("   lng=").append(lng);
-        builder.append("   lat=").append(lat);
+        builder.append(this.getClass().getName()).append(" -");
+        builder.append("  id=").append(id);
+        builder.append("  name=").append(name);
+        builder.append("  email=").append(email);
+        builder.append("  address=").append(address);
+        builder.append("  lng=").append(lng);
+        builder.append("  lat=").append(lat);
 
         return builder.toString();
     }

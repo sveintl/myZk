@@ -11,6 +11,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
@@ -34,6 +36,15 @@ public class DealerRepositoryTest {
     public void testFindOne() {
         Dealer dealer = dealerRepository.findOne(2);
         assertThat(dealer.getName(), is("Toyota Oppsal"));
+    }
+
+    @Test
+    public void testFindAll() {
+        List<Dealer> dealers = dealerRepository.findAll();
+        for (Dealer dealer : dealers) {
+            logger.debug(dealer.toString());
+        }
+        assertThat(dealers.size(), is(4));
     }
 
 }
