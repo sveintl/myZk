@@ -2,16 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>myZk</artifactId>
+        <groupId>myZk</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>myZk</groupId>
-    <artifactId>myZk</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>myzk-persistence</module>
-        <module>myzk-web</module>
-    </modules>
-    <packaging>pom</packaging>
+    <artifactId>myzk-web</artifactId>
+    <packaging>war</packaging>
 
     <properties>
         <zkversion>6.5.4</zkversion>
@@ -47,5 +46,4 @@
         </dependency>
     </dependencies>
 
-    
 </project>
