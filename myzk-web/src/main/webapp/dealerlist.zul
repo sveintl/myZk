@@ -1,0 +1,32 @@
+<window apply="org.zkoss.bind.BindComposer"
+        viewModel="@id('vm') @init('no.toyota.model.DealerListViewModel')"
+        border="normal" hflex="1" vflex="1" contentStyle="overflow:auto">
+    <borderlayout>
+        <center autoscroll="true" border="none">
+            <vlayout hflex="1" vflex="1">
+                <listbox model="@bind(vm.dealerListModel)" id="dealerListbox" vflex="1">
+                    <listhead>
+                        <listheader/>
+                        <listheader/>
+                    </listhead>
+                    <template name="model">
+                        <listitem value="${each}">
+                            <listcell>
+                                <label value="${each.name}"/>
+                            </listcell>
+                            <listcell>
+                                <label value="${each.email}"/>
+                            </listcell>
+                        </listitem>
+                    </template>
+                </listbox>
+            </vlayout>
+        </center>
+        <east id="selectedTodoBlock" visible="false" width="300px" border="none" collapsible="false"
+              splittable="true" minsize="300" autoscroll="true">
+            <vlayout >
+                <!-- detail editor -->
+            </vlayout>
+        </east>
+    </borderlayout>
+</window>

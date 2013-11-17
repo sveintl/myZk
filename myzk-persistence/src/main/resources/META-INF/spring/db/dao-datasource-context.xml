@@ -11,7 +11,7 @@
                            http://www.springframework.org/schema/util
                            http://www.springframework.org/schema/util/spring-util-3.2.xsd">
 
-    <bean id="dataSource"
+    <!--bean id="dataSource"
           class="org.apache.commons.dbcp.BasicDataSource"
           destroy-method="close"
           p:driverClassName="${jdbc.driver.class}" p:url="${jdbc.url}"
@@ -23,10 +23,27 @@
           p:minEvictableIdleTimeMillis="${jdbc.min.evictable.idle}"
           p:testOnBorrow="true"
           p:validationQueryTimeout="${jdbc.validation.query.timeout}"
-          p:validationQuery="${jdbc.validation.query}" />
+          p:validationQuery="${jdbc.validation.query}" /-->
+
+    <bean id="dataSource"
+          class="org.apache.commons.dbcp.BasicDataSource"
+          destroy-method="close"
+          p:driverClassName="com.mysql.jdbc.Driver" p:url="jdbc:mysql://127.0.0.1:3306/myZk"
+          p:username="root" p:password=""
+          p:initialSize="1"
+          p:minIdle="1" p:maxIdle="2"
+          p:maxActive="4"
+          p:timeBetweenEvictionRunsMillis="30000"
+          p:minEvictableIdleTimeMillis="60000"
+          p:testOnBorrow="true"
+          p:validationQueryTimeout="30000" />
 
     <beans profile="hsql">
         <context:property-placeholder location="classpath:/sql/hsql.properties,classpath*:META-INF/config/**/*.properties" />
+    </beans>
+
+    <beans profile="mysql">
+        <context:property-placeholder location="classpath:/sql/mysql.properties,classpath*:META-INF/config/**/*.properties"/>
     </beans>
 
 </beans>

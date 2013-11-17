@@ -1,5 +1,6 @@
 package no.webstep.service;
 
+import no.webstep.converter.DealerConverter;
 import no.webstep.orm.repository.DealerRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,11 +23,14 @@ public class DealerServiceTest {
 
     @Mock
     private DealerRepository dealerRepository;
+    @Mock
+    private DealerConverter converter;
 
     @Before
     public void setUp() {
         dealerService = new DealerService();
         dealerService.setDealerRepository(dealerRepository);
+        dealerService.setConverter(converter);
     }
 
     @Test

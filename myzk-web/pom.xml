@@ -12,10 +12,6 @@
     <artifactId>myzk-web</artifactId>
     <packaging>war</packaging>
 
-    <properties>
-        <zkversion>6.5.4</zkversion>
-    </properties>
-
     <repositories>
         <repository>
             <id>ZK CE</id>
@@ -24,25 +20,36 @@
     </repositories>
 
     <dependencies>
+        <!-- START ZK Depencencies -->
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkplus</artifactId>
-            <version>${zkversion}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zhtml</artifactId>
-            <version>${zkversion}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zkbind</artifactId>
-            <version>${zkversion}</version>
         </dependency>
         <dependency>
             <groupId>org.zkoss.zk</groupId>
             <artifactId>zul</artifactId>
-            <version>${zkversion}</version>
+        </dependency>
+        <!-- END ZK Depencencies -->
+
+        <!-- START Spring Dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+        <!-- START Spring Dependencies -->
+
+        <dependency>
+            <groupId>myZk</groupId>
+            <artifactId>myzk-service</artifactId>
+            <version>${project.parent.version}</version>
         </dependency>
     </dependencies>
 

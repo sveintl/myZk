@@ -8,9 +8,7 @@
                            http://www.springframework.org/schema/context
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="no.webstep.service,no.webstep.converter" />
-
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
-          p:basenames="messages" />
+    <import resource="classpath*:/META-INF/spring/db/**/*-context.xml"/>
+    <import resource="classpath*:/META-INF/spring/**/*-context.xml"/>
 
 </beans>

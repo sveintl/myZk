@@ -1,6 +1,7 @@
 package no.webstep.service;
 
-import no.webstep.orm.entity.Dealer;
+import no.webstep.converter.DealerConverter;
+import no.webstep.domain.Dealer;
 import no.webstep.orm.repository.DealerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,12 +22,19 @@ public class DealerService {
     @Autowired
     private DealerRepository dealerRepository;
 
+    @Autowired
+    private DealerConverter converter;
+
     @Transactional(readOnly = true)
     public List<Dealer> findAll() {
-        return dealerRepository.findAll();
+        return converter.convertListTo(dealerRepository.findAll());
     }
 
     public void setDealerRepository(DealerRepository dealerRepository) {
         this.dealerRepository = dealerRepository;
+    }
+
+    public void setConverter(DealerConverter converter) {
+        this.converter = converter;
     }
 }

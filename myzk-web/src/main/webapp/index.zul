@@ -8,7 +8,7 @@
             <include src="leftmenu.zul" />
         </west>
         <center id="mainContent" autoscroll="true">
-            <label style="font-size:50px">Center for content</label>
+            <include src="dealerlist.zul"/>
         </center>
         <south height="50px" border="none">
             <label style="font-size:50px">South for footer</label>

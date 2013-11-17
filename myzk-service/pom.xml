@@ -31,8 +31,18 @@
         </dependency>
 
         <dependency>
+            <groupId>net.sf.dozer</groupId>
+            <artifactId>dozer</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>myZk</groupId>
             <artifactId>myzk-persistence</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>myZk</groupId>
+            <artifactId>myzk-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
 

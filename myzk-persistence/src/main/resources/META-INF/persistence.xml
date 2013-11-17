@@ -19,5 +19,18 @@
         </properties>
     </persistence-unit>
 
+    <persistence-unit name="mysql">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+
+        <properties>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLMyISAMDialect" />
+
+            <property name="hibernate.hbm2ddl.auto" value="validate" />
+            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>
+            <property name="hibernate.max_fetch_depth" value="3" />
+            <property name="jadira.usertype.autoRegisterUserTypes" value="true" />
+            <property name="jadira.usertype.databaseZone" value="jvm" />
+        </properties>
+    </persistence-unit>
 
 </persistence>
